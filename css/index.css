@@ -1,0 +1,22 @@
+.navbar{
+    background-color: black;
+}
+img{
+    margin: 18px;
+}
+button {
+    background-color: transparent;
+    color: white;
+    border-radius: 7px;
+    border: none;
+    padding: 17px;
+    margin-right: 13px; 
+    flex-direction: column-reverse;;
+      
+
+
+}
+button:hover{
+    cursor: pointer;
+    background: #444444;
+} 
