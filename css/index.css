@@ -1,22 +1,73 @@
+* {
+    margin: 0;
+    padding:0;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, Tahoma, sans-serif;
+}
+
+
 .navbar{
     background-color: black;
+    height: 80px;
+
 }
-img{
-    margin: 18px;
-}
+
 button {
     background-color: transparent;
     color: white;
     border-radius: 7px;
     border: none;
     padding: 17px;
-    margin-right: 13px; 
-    flex-direction: column-reverse;;
-      
-
-
+    margin-right: 13px;
+    display: flex;
 }
 button:hover{
     cursor: pointer;
     background: #444444;
 } 
+
+#img-fundo {
+    border-top: 2px solid red;
+    width: 100%; 
+     height: 100%;
+    background-image: url("/img/clienteinsatisfeito.png");
+    background-size: cover;
+}
+
+p {
+    text-align: center;
+    padding: 10px;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    text-shadow: 5px 5px 5px black;
+}
+
+button.meio{
+    color: yellow;
+    justify-content: right;
+    padding-bottom: 10px;
+    display: inline-block;
+    background-color: transparent;
+    color: white;
+    border-radius: 7px;
+    border: none;
+    padding: 17px;
+    margin-right: 13px;
+    
+}
+
+button.meio:hover{
+    cursor: pointer;
+    background: rgb(51, 255, 255);
+    
+} 
+
+
