@@ -9,7 +9,55 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="css/index.css" rel="stylesheet">
     <link rel="shortcut icon" href="/img/F1.png" type="image/x-icon">
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous">
+    </script>
 </head>
+
+<script>
+    $(document).ready(function(){
+
+
+        var enviarEmail = function(email, titulo, content) {
+            return new Promise(function(resolve,reject) {
+                $.ajax({
+                    url:"https://us-central1-pireclameali.cloudfunctions.net/sendMail",
+                    dataType:"JSON",
+                    type:"POST",
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+                        email: email,
+                        title: titulo,
+                        content: content
+                    }),
+                    success: function(response) {
+                        console.log(response)
+                        resolve(response);
+                    },
+                    error: function(err) {
+                        reject(err);
+                    }
+                })
+            })
+            
+        }
+
+        enviarEmail("igorpraxedeslinux@gmail.com", "Teste 01", "Teste envio via ajax");
+
+
+
+        $("#formulario").submit(function(e) {
+            e.preventDefault();
+
+            enviarEmail("igorpraxedeslinux@gmail.com", "Teste 01", "Teste envio via ajax");
+
+        })
+        
+
+    });
+</script>
 
 <body style="background: #4444;">
     <nav class="navbar  navbar-right">
@@ -33,7 +81,7 @@
             <div style="width: 50%; height: 450px; background: rgba(0, 0, 0, 0.5); border-radius: 16px;">
                 <div>
                     <h1 style="">Nosso aplicativo</h1>
-                    <form action="action_page.php">
+                    <form id="formulario" action="javascript::void(0);">
                         <label for="titulo">Titulo da Reclamação</label>
                         <input type="text" name="Titulo da Reclamação" id="titulo" 
                         placeholder="Titulo da Reclamação" >
