@@ -31,7 +31,6 @@ button:hover{
 } 
 
 #img-fundo {
-    border-top: 2px solid red;
     width: 100%; 
      height: 100%;
     background-image: url("../img/clienteinsatisfeito.png");
@@ -85,3 +84,82 @@ width: 100%;
  height: 100%;
 background-image: url("/img/clienteinsatisfeito.png");
 background-size: cover; */
+/* ------------------------------- */ 
+
+
+
+div#esquerda {
+    position: relative;
+    flex: 1;
+    align-items: initial;
+    background: black;
+    height: 100%;
+    width: 35%;
+    
+}
+
+div#meio {
+    position: relative;
+    flex: 1;
+    align-items: initial;
+    background: black;
+    height: 100%;
+    width: 35%;
+    float: left;
+}
+
+div#direita {
+    background: blue;
+    position: relative;
+	width: 30%;
+	height: 200px;
+    background-color: black;
+    float: left;
+	
+}
+
+
+
+
+
+/* ------------------------- */
+
+#esquerda {
+	position:relative;
+	width: 500px;
+	height: 200px;
+	background-color: black;
+	float: left;
+}
+#meio {
+	position: relative;
+	width: 300px;
+	height: 200px;
+	background-color: red;
+	float: left;
+}
+#direita {
+	position: relative;
+	width: 548px;
+	height: 200px;
+	background-color: blue;
+	float: left;
+}
+
+
+
+li {
+    color: white;
+    
+    justify-content: center;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+ul {
+    margin-top: 20px;
+    margin-left: 34px;
+    
+}
+
