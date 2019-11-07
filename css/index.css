@@ -6,7 +6,7 @@
 body, html {
     width: 100%;
     height: 100%;
-    font-family: Arial, Tahoma, sans-serif;
+    font-family: 'Century Gothic';
 }
 
 
@@ -34,7 +34,7 @@ button:hover{
     border-top: 2px solid red;
     width: 100%; 
      height: 100%;
-    background-image: url("/img/clienteinsatisfeito.png");
+    background-image: url("../img/clienteinsatisfeito.png");
     background-size: cover;
 }
 
@@ -44,7 +44,7 @@ p {
     color: white;
 }
 
-h1 {
+h3 {
     text-align: center;
     color: white;
     text-shadow: 5px 5px 5px black;
@@ -69,6 +69,15 @@ button.meio:hover{
     background: rgb(51, 255, 255);
     
 } 
+.form-group{
+    text-align: center;
+}
+.form-group label{
+    padding-top: 10px;
+    color: white;
+    
+}
+
 /* 
 
 border-top: 2px solid red;

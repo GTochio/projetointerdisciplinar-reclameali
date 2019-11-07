@@ -33,25 +33,24 @@
                         content: content
                     }),
                     success: function(response) {
-                        console.log(response)
+                        console.log(response);
                         resolve(response);
                     },
                     error: function(err) {
                         reject(err);
                     }
-                })
+                });
             })
             
         }
 
-        enviarEmail("igorpraxedeslinux@gmail.com", "Teste 01", "Teste envio via ajax");
-
-
+        //enviarEmail("igorpraxedeslinux@gmail.com", "Teste 01", "Teste envio via ajax"); 
 
         $("#formulario").submit(function(e) {
             e.preventDefault();
 
-            enviarEmail("igorpraxedeslinux@gmail.com", "Teste 01", "Teste envio via ajax");
+            console.log(e.target)
+           //enviarEmail("igorpraxedeslinux@gmail.com", "Teste 01", "Teste envio via ajax");
 
         })
         
@@ -64,7 +63,7 @@
         <!-- <ahref="#">Navbar</a>   -->
 
         <a href="http://www.google.com.br"><img class="navbar-brand" src="img/LOGO3.png" alt="" height="35px"
-                width="150px"></a>
+        ></a>
         <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 
@@ -79,15 +78,18 @@
     <div class="capa" id="img-fundo">
         <div style="width: 100%; display: flex; height: 100vh; justify-content: center; align-items: center;">
             <div style="width: 50%; height: 450px; background: rgba(0, 0, 0, 0.5); border-radius: 16px;">
-                <div>
-                    <h1 style="">Nosso aplicativo</h1>
+                <div class="container">
+                    <h3>Envie sua Reclamação</h3>
                     <form id="formulario" action="javascript::void(0);">
-                        <label for="titulo">Titulo da Reclamação</label>
-                        <input type="text" name="Titulo da Reclamação" id="titulo" 
-                        placeholder="Titulo da Reclamação" >
-
-                        <label for="estabelecimento">Estabelecimento a ser reclamado</label>
-                        <select name="" id="">
+                        <div class="form-group">
+                        <label for="titulo"><strong>Motivo da Reclamação</strong></label>
+                        
+                        <input name="title" type="text" id="titulo" 
+                        placeholder="Titulo da Reclamação" class="form-control block">
+                        
+                        <label for="estabelecimento"><strong> Estabelecimento a ser reclamado</strong></label>
+                        <div class="sm-cool-12">
+                        <select name="estabelecimento" id="" class="form-control">
                             <option value="">Selecione o estabelecimento</option>
                             <option value="igorpraxedeslinux@gmail.com">Burguer King</option>
                             <option value="igorpraxedeslinux@gmail.com">Veio Santo</option>
@@ -104,11 +106,17 @@
                             <option value="igorpraxedeslinux@gmail.com">Muffato</option>
                             <option value="igorpraxedeslinux@gmail.com">Parana Supermercados</option>
                             <option value="igorpraxedeslinux@gmail.com">Unimake Software</option>
-                        </select>>
+                        </select>
+                        </div>
+                        <label for="Reclamacao"><strong> Informe a reclamação</strong></label>
+                        <textarea id="reclamacao" name="reclamacao" rows="5" cols="78" placeholder="Informe aqui sua reclamação!!!"></textarea>              
+                        </div>
+                        <button type="submit" class="btn btn-primary"  id="enviar">Enviar</button>
                     </form>
                 </div>
-                <button class="meio" href="#">Contato</button>
-                <button class="meio" href="#">Contato</button>
+                <div style="text-align: center; margin-bottom: 10px;">
+                
+            </div>
             </div>
             
         </div>
