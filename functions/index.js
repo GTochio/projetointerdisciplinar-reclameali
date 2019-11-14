@@ -7,8 +7,8 @@ admin.initializeApp();
 let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'igorpraxedeslinux@gmail.com',
-        pass: ''
+        user: 'reclamealicm@gmail.com',
+        pass: 'AcC=1300'
     }
 });
 
@@ -21,11 +21,10 @@ exports.sendMail = functions.https.onRequest((req, res) => {
         const content = req.body.content;
 
         const mailOptions = {
-            from: 'Your Account Name <igorpraxedeslinux@gmail.com>',
+            from: 'Your Account Name <reclamealicm@gmail.com>',
             to: dest,
             subject: title,
             html: content ? content : `<p style="font-size: 16px;"></p>
-
                 Sem conteudo
                 <br />
                 ${content}

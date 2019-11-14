@@ -20,7 +20,15 @@
     $(document).ready(function(){
 
 
+        var enviando = false;
+
+
         var enviarEmail = function(email, titulo, content) {
+            if(enviando == true) {
+                return;
+            }
+            enviando = false;
+            $("#enviar").text("Enviando...").addClass("disabled")
             return new Promise(function(resolve,reject) {
                 $.ajax({
                     url:"https://us-central1-pireclameali.cloudfunctions.net/sendMail",
@@ -33,10 +41,13 @@
                         content: content
                     }),
                     success: function(response) {
-                        console.log(response);
+                        console.log(response,'1');
                         resolve(response);
                     },
                     error: function(err) {
+                        if(err.status == 200) {
+                            resolve();
+                        }
                         reject(err);
                     }
                 });
@@ -48,10 +59,32 @@
 
         $("#formulario").submit(function(e) {
             e.preventDefault();
+            const estabelecimento = e.target.estabelecimento.value;
+            const titulo = e.target.titulo.value;
+            const reclamacao = e.target.reclamacao.value;
+            
+            var html = `
+                <br/>
+                <h2>Olá um cliente/utilizador de seu produto ou serviço lhe enviou uma mensagem pela plataforma ReclameAli </h2>
+                <br/>
+                Título: ${titulo}
+                <br/>
+                O corpo da mensagem é:
+                <br/>
+                <i>
+                    ${reclamacao}
+                <i/>
+                <h4>Regularize esta situação para garantir um futuro prospero de sua empresa<h4>
+            `;
 
-            console.log(e.target)
-           //enviarEmail("igorpraxedeslinux@gmail.com", "Teste 01", "Teste envio via ajax");
-
+           enviarEmail(estabelecimento, "ReclameAli - " + titulo, html)
+           .then(function() {
+                alert("Obrigado por utilizar nossos serviços, o envio foi realizado com sucesso.");
+                window.location.reload();
+           }).catch(function(err) {
+               console.log(err)
+               alert("Sem conexão");
+           });
         })
         
 
@@ -78,7 +111,7 @@
     <div class="capa" id="img-fundo">
         <div style="width: 100%; display: flex; height: 100vh; justify-content: center; align-items: center;">
             <div style="width: 50%; height: 450px; background: rgba(0, 0, 0, 0.5); border-radius: 16px;">
-                <div class="container">
+                <div class="container" id="bct" >
                     <h3>Envie sua Reclamação</h3>
                     <form id="formulario" action="javascript::void(0);">
                         <div class="form-group">
@@ -108,8 +141,8 @@
                             <option value="igorpraxedeslinux@gmail.com">Unimake Software</option>
                         </select>
                         </div>
-                        <label for="Reclamacao"><strong> Informe a reclamação</strong></label>
-                        <textarea id="reclamacao" name="reclamacao" rows="5" cols="78" placeholder="Informe aqui sua reclamação!!!"></textarea>              
+                        <label for="estabelecimento"><strong> Qual é a reclamação ? </strong></label>
+                        <textarea class="form-control" id="reclamacao" name="reclamacao" rows="5" cols="78" placeholder="Informe aqui sua reclamação!!!"></textarea>              
                         </div>
                         <button type="submit" class="btn btn-primary"  id="enviar">Enviar</button>
                     </form>
@@ -130,12 +163,12 @@
     aksjdaskm
 </footer> -->
 
-    <footer id="rodape" style="background: black; height: 200px;">
+    <footer id="rodape" style="background: black; height: 200px;text-align: center;;">
 
 
         <div id="esquerda">
             <div style="margin: 12px; border: 1px solid white; border-top: none; border-left: none; border-bottom: none;">
-                <h1>
+                <h1 style="color:white;">
                     Sobre a equipe
                 </h1>
 
@@ -149,30 +182,23 @@
 
         <div id="meio">
             <div style="margin: 12px; border: 1px solid white; border-top: none; border-left: none; border-bottom: none;">
-            <h1>Nosso Aplicativo </h1>
-            <p>
-                sdfsdfksdfsdfsdjfiksdj <br>
-                sdkfnskdnfksdnfksdn <br>
-                jfsdjifbsd <br>
-                sdfsfsdfsdfsdfsdf
-                sdfsdfksdfsdfsdjfiksdjsdfsdf
+            <h1 style="color:white;" >Nosso Aplicativo </h1>
+            <p style="font-size: 30px;" >
+                Um sistema de reclamações anônima
             </p>
         </div>
     </div>
 
         <div id="direita">
-            <div >
-
-           
-
-            <h1>Contato</h1>
-            <ul id="ul">
-                <li>Bruno Papait - brunopapait@grupointegrado.br</li>
-                <li>Gabriel Tochio - gabriel.tochio@grupointegrado.br</li>
-                <li>Guilherme - guilhermepereira@grupointegrado.br</li>
-                <li>Igor Praxedes - igorpraxedes@grupointegrado.br</li>
-            </ul>
-        </div>
+            <div>
+                <h1 style="color:white;">Contato</h1>
+                <ul id="ul">
+                    <li>Bruno Papait - brunopapait@grupointegrado.br</li>
+                    <li>Gabriel Tochio - gabriel.tochio@grupointegrado.br</li>
+                    <li>Guilherme - guilhermepereira@grupointegrado.br</li>
+                    <li>Igor Praxedes - igorpraxedes@grupointegrado.br</li>
+                </ul>
+            </div>
         </div>
 
     </footer>
