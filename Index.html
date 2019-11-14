@@ -55,7 +55,7 @@
             
         }
 
-        //enviarEmail("igorpraxedeslinux@gmail.com", "Teste 01", "Teste envio via ajax"); 
+        //enviarEmail("tgabrielfernando@gmail.com", "Teste 01", "Teste envio via ajax"); 
 
         $("#formulario").submit(function(e) {
             e.preventDefault();
@@ -95,15 +95,15 @@
     <nav class="navbar  navbar-right">
         <!-- <ahref="#">Navbar</a>   -->
 
-        <a href="http://www.google.com.br"><img class="navbar-brand" src="img/LOGO3.png" alt="" height="35px"
+        <a href="Index.html"><img class="navbar-brand" src="img/LOGO3.png" alt="" height="35px"
         ></a>
         <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 
-            <button class="botoes" href="#">Home</button>
-            <button class="botoes" href="#">Acesse o Aplicativo</button>
-            <button class="botoes" href="#">Sobre a Equipe</button>
-            <button class="botoes" href="#">Contato</button>
+            <button class="botoes" ><a style="color: white; text-decoration: none;" href="Index.html"> Home</a></button>
+            <button class="botoes" ><a style="color: white; text-decoration: none;" href="novidades.html"> Acesse o Aplicativo</a></button>
+            <button class="botoes" ><a style="color: white; text-decoration: none;" href="#sobre"> Sobre a Equipe</a></button>
+            <button class="botoes" ><a style="color: white; text-decoration: none;" href="#contato">Contato </a></button>
             <span class="navbar-toggler-icon"></span>
         </button>
     </nav>
@@ -124,24 +124,24 @@
                         <div class="sm-cool-12">
                         <select name="estabelecimento" id="" class="form-control">
                             <option value="">Selecione o estabelecimento</option>
-                            <option value="igorpraxedeslinux@gmail.com">Burguer King</option>
-                            <option value="igorpraxedeslinux@gmail.com">Veio Santo</option>
-                            <option value="igorpraxedeslinux@gmail.com">Centro Universitario Integrado</option>
-                            <option value="igorpraxedeslinux@gmail.com">UTFPR - Universidade Tecnologica Federal do Paraná</option>
+                            <option value="tgabrielfernando@gmail.com">Burguer King</option>
+                            <option value="tgabrielfernando@gmail.com">Véio Santo</option>
+                            <option value="tgabrielfernando@gmail.com">Centro Universitário Integrado</option>
+                            <option value="tgabrielfernando@gmail.com">UTFPR - Universidade Tecnologica Federal do Paraná</option>
                             <option value="tgabrielfernando@gmail.com">Unicampo</option>
-                            <option value="tgabrielfernando@gmail.com">Unespar</option>
-                            <option value="tgabrielfernando@gmail.com">6ªAula</option>
+                            <option value="tgabrielfernando@gmail.com">UNESPAR</option>
+                            <option value="tgabrielfernando@gmail.com">6ªAula Bar</option>
                             <option value="tgabrielfernando@gmail.com">Unimed</option>
                             <option value="tgabrielfernando@gmail.com">London Hamburgueria</option>
-                            <option value="igorpraxedeslinux@gmail.com">Sushi Bar Mariemoto</option>
-                            <option value="igorpraxedeslinux@gmail.com">Makito</option>
-                            <option value="igorpraxedeslinux@gmail.com">Brizola</option>
-                            <option value="igorpraxedeslinux@gmail.com">Muffato</option>
-                            <option value="igorpraxedeslinux@gmail.com">Parana Supermercados</option>
-                            <option value="igorpraxedeslinux@gmail.com">Unimake Software</option>
+                            <option value="tgabrielfernando@gmail.com">Sushi Bar Mariemoto</option>
+                            <option value="tgabrielfernando@gmail.com">Makito</option>
+                            <option value="tgabrielfernando@gmail.com">Brizola</option>
+                            <option value="tgabrielfernando@gmail.com">Muffato</option>
+                            <option value="tgabrielfernando@gmail.com">Paraná Supermercados</option>
+                            <option value="tgabrielfernando@gmail.com">Unimake Software</option>
                         </select>
                         </div>
-                        <label for="estabelecimento"><strong> Qual é a reclamação ? </strong></label>
+                        <label for="estabelecimento"><strong> Qual é a reclamação? </strong></label>
                         <textarea class="form-control" id="reclamacao" name="reclamacao" rows="5" cols="78" placeholder="Informe aqui sua reclamação!!!"></textarea>              
                         </div>
                         <button type="submit" class="btn btn-primary"  id="enviar">Enviar</button>
@@ -163,12 +163,12 @@
     aksjdaskm
 </footer> -->
 
-    <footer id="rodape" style="background: black; height: 200px;text-align: center;;">
+    <footer id="rodape" style="background: black; height: 200px;">
 
 
         <div id="esquerda">
             <div style="margin: 12px; border: 1px solid white; border-top: none; border-left: none; border-bottom: none;">
-                <h1 style="color:white;">
+                <h1 class = ' allign' id="sobre" style="color:white;">
                     Sobre a equipe
                 </h1>
 
@@ -182,16 +182,16 @@
 
         <div id="meio">
             <div style="margin: 12px; border: 1px solid white; border-top: none; border-left: none; border-bottom: none;">
-            <h1 style="color:white;" >Nosso Aplicativo </h1>
+            <h1 class = ' allign' style="color:white;" >Nosso Aplicativo </h1>
             <p style="font-size: 30px;" >
-                Um sistema de reclamações anônima
+                Um sistema de reclamações anônimas.
             </p>
         </div>
     </div>
 
         <div id="direita">
             <div>
-                <h1 style="color:white;">Contato</h1>
+                <h1 class = ' allign' id="contato" style="color:white;">Contato</h1>
                 <ul id="ul">
                     <li>Bruno Papait - brunopapait@grupointegrado.br</li>
                     <li>Gabriel Tochio - gabriel.tochio@grupointegrado.br</li>
